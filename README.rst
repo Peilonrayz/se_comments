@@ -39,7 +39,7 @@ To run all tests run ``nox``. No venv is needed; nox makes all of them for us.
 .. code:: shell
 
    $ python -m pip install --user nox
-   $ git clone https://peilonrayz.github.io/se_comments/
+   $ git clone https://github.com/Peilonrayz/se_comments
    $ cd se_comments
    se_comments $ nox
 

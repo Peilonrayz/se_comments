@@ -24,7 +24,9 @@ Installation
 
 .. code:: shell
 
-   $ python -m pip install se_comments
+   $ git clone https://github.com/Peilonrayz/se_comments
+   $ cd se_comments
+   $ python -m pip install .
 
 Documentation
 -------------

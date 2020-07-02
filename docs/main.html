@@ -1,0 +1,461 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Comment Micro-language &mdash; se_comments 0.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Problems" href="problems.html" />
+    <link rel="prev" title="Welcome to Skeleton Py’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> se_comments
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Comment Micro-language</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rational">Rational</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#syntax">Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#namespaces">Namespaces</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#global">Global</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#close-reasons">Close Reasons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#site-policy">Site Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stack-overflow">Stack Overflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stack-overflow-close-reasons">Stack Overflow Close Reasons</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="problems.html">Problems</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">se_comments</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Comment Micro-language</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/main.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="comment-micro-language">
+<h1>Comment Micro-language<a class="headerlink" href="#comment-micro-language" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rational">
+<h2>Rational<a class="headerlink" href="#rational" title="Permalink to this headline">¶</a></h2>
+<p>What’s the point in <a class="reference external" href="https://codereview.meta.stackexchange.com/q/4952">yet another auto comments</a>?</p>
+<ol class="arabic">
+<li><p>I frequently forget to install the auto comments script, leaving me without any auto comments.</p></li>
+<li><p>There is no way to merge comments with the auto comments script.
+This means that we either need to write greetings anyway or have two or more versions of each script for greetings alone.
+This means greetings will just be dropped as typing goes against the point of having auto comments.</p>
+<p>Now if we take into account that there can be multiple problems with a single question, then making a mixture of auto comments becomes unmaintainable.</p>
+</li>
+<li><p>Personally I find some of the current auto comments to be very specific.
+Whilst this is great when we have to deal with that one solution, it makes the auto comments somewhat nonsensical in other situations.</p>
+<p>Say we had an auto comment that had a greeting prepend to it, would it make sense to use that with a 10k user?
+Would you edit it out?</p>
+</li>
+</ol>
+<p>All of these made me drop auto comments for long periods of time.
+And I feel I’m posting more helpful content because it’s keeping things to the problem(s) at hand.
+Not hiding any and not adding unneeded information.</p>
+<p>However this has a couple of major problems.</p>
+<ul class="simple">
+<li><p>I am lazy. Whilst I know there’s a page that will really help the user and I should add it to my comment, I don’t.
+This means at times I am outputting unhelpful comments.</p></li>
+<li><p>I make mistakes. Sometimes I miss a crucial part of a comment. Contrast “please don’t post many similar questions” vs “please don’t post many similar questions in short time periods”.
+This can cause there to be confusion and is again unhelpful.</p></li>
+</ul>
+<p>Whilst this is good for me there are some problems with my approach.</p>
+<ul class="simple">
+<li><p>You may not have Python installed, or have the Python-foo to install this project.</p></li>
+<li><p>You may not like a CLI only program, I have to open a terminal? No thanks.</p></li>
+<li><p>You may not like my comment choices, and you don’t know how to change them.</p></li>
+<li><p>You want simple auto comments, you don’t want to have to type short hand for your comments.</p></li>
+<li><p>You don’t know the short hand or names I have used.</p></li>
+</ul>
+</div>
+<div class="section" id="syntax">
+<h2>Syntax<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h2>
+<p>The syntax is really basic, and looks a lot like a list literal from Python or JavaScript.
+However the outermost ‘list’ doesn’t have the square brackets.
+However it does not build lists it builds a dictionary, the keys are on the left hand side of the brackets and the keys of the child mapping are on the inside of the brackets.
+All keys surrounding whitespace stripped.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Welcome[John Doe],
+VTC[
+    Broken[
+        Quote[this does not work],
+        Asking[to fix this],
+    ],
+    Inline,
+],
+Scope[Title]
+</pre></div>
+</div>
+<p>Contrast to if we were to use JSON:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;Welcome&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;John Doe&quot;</span><span class="p">:</span> <span class="p">{}},</span>
+    <span class="nt">&quot;VTC&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;Broken&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;Quote&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;this does not work&quot;</span><span class="p">:</span> <span class="p">{}},</span>
+            <span class="nt">&quot;Asking&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;to fix this&quot;</span><span class="p">:</span> <span class="p">{}}</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;Inline&quot;</span><span class="p">:</span> <span class="p">{}</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;Scope&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;Title&quot;</span><span class="p">:</span> <span class="p">{}}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>There are only 4 characters that are recognized:</p>
+<ol class="arabic simple">
+<li><p>Opening brackets, <code class="docutils literal notranslate"><span class="pre">[</span></code>. These denote the start of a mapping.</p></li>
+<li><p>Closing brackets, <code class="docutils literal notranslate"><span class="pre">]</span></code>. These denote the end of a mapping.</p></li>
+<li><p>A comma, <code class="docutils literal notranslate"><span class="pre">,</span></code>. These are used to split two keys where the first doesn’t have any values.</p></li>
+<li><p>A backslash, <code class="docutils literal notranslate"><span class="pre">\</span></code>. This is to escape the next character.</p></li>
+</ol>
+<p>It should be noted that this means that commas are entirely optional following closing brackets.</p>
+</div>
+<div class="section" id="namespaces">
+<h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h2>
+<p>From here the keys map to keys in a namespace. For example <code class="docutils literal notranslate"><span class="pre">Welcome</span></code> means points to the global <code class="docutils literal notranslate"><span class="pre">Welcome</span></code> which will take the entered name and return the welcome greeting.
+The <code class="docutils literal notranslate"><span class="pre">VTC</span></code> however causes the inner dictionary to be passed to the VTC namespace.</p>
+<p>Each namespace accepts multiple keys for the same function.
+This means you can use the long form <code class="docutils literal notranslate"><span class="pre">Welcome[John</span> <span class="pre">Doe]</span></code> or the short form <code class="docutils literal notranslate"><span class="pre">W[John</span> <span class="pre">Doe]</span></code>.
+The keys on namespaces are also case insensitive and ignore spaces, this means <code class="docutils literal notranslate"><span class="pre">Vote</span> <span class="pre">to</span> <span class="pre">Close</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">votetoclose</span></code>.</p>
+<p>This is a key to make skim reading easier:</p>
+<dl class="simple">
+<dt>🔗</dt><dd><p>Contains a link to a relevant page.</p>
+</dd>
+<dt>📜</dt><dd><p>Changes the output of the text.</p>
+</dd>
+<dt>📚</dt><dd><p>Indicates that it points to a namespace.</p>
+</dd>
+<dt>🚩</dt><dd><p>Produce an error</p>
+</dd>
+</dl>
+<div class="section" id="global">
+<h3>Global<a class="headerlink" href="#global" title="Permalink to this headline">¶</a></h3>
+<p>The global namespace contains:</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">&#64;</span></code> <code class="docutils literal notranslate"><span class="pre">At</span></code></dt><dd><p>Will strip spaces in the name.</p>
+<dl class="simple">
+<dt>🚩 Empty</dt><dd><p>There is no point in using Core.&#64; without a name.</p>
+</dd>
+<dt>📜 Else</dt><dd><p>&#64;{value}</p>
+</dd>
+</dl>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">H</span></code> <code class="docutils literal notranslate"><span class="pre">Hi</span></code></dt><dd><dl class="simple">
+<dt>🚩 Empty</dt><dd><p>There is no point in using Core.Hi without a name.</p>
+</dd>
+<dt>📜 Else</dt><dd><p>Hi {value}.</p>
+</dd>
+</dl>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">W</span></code> <code class="docutils literal notranslate"><span class="pre">Welcome</span></code></dt><dd><dl class="simple">
+<dt>Empty</dt><dd><p>Welcome to Code Review.</p>
+</dd>
+<dt>Else</dt><dd><p>Welcome to Code Review {value}.</p>
+</dd>
+</dl>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">VTC</span></code> <code class="docutils literal notranslate"><span class="pre">Vote</span> <span class="pre">To</span> <span class="pre">Close</span></code> <code class="docutils literal notranslate"><span class="pre">C</span></code> <code class="docutils literal notranslate"><span class="pre">Close</span></code></dt><dd><dl>
+<dt>🔗 Empty</dt><dd><p>Unfortunately your question is currently <a class="reference external" href="https://codereview.stackexchange.com/help/on-topic">off-topic</a>. Once you have fixed the issues with your post we’ll be happy to review your code.</p>
+</dd>
+<dt>📚 Else</dt><dd><p>Enter <a class="reference external" href="#close-reasons">close reasons namespace</a>.</p>
+<p>Unfortunately your question is currently off-topic. {messages} Once you have fixed the issues with your post we’ll be happy to review your code.</p>
+</dd>
+</dl>
+</dd>
+<dt>📚 <code class="docutils literal notranslate"><span class="pre">SP</span></code> <code class="docutils literal notranslate"><span class="pre">Site</span> <span class="pre">Policy</span></code></dt><dd><p>Enter <a class="reference external" href="#site-policy">site policy namespace</a>.</p>
+</dd>
+<dt>📚 <code class="docutils literal notranslate"><span class="pre">SO</span></code> <code class="docutils literal notranslate"><span class="pre">Stack</span> <span class="pre">Overflow</span></code></dt><dd><p>Enter <a class="reference external" href="#stack-overflow">Stack Overflow namespace</a>.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="close-reasons">
+<h3>Close Reasons<a class="headerlink" href="#close-reasons" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>🔗 📜 <code class="docutils literal notranslate"><span class="pre">Broken</span></code> <code class="docutils literal notranslate"><span class="pre">CNWAI</span></code> <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Not</span> <span class="pre">Working</span> <span class="pre">As</span> <span class="pre">Intended</span></code></dt><dd><p>We only review <a class="reference external" href="https://codereview.meta.stackexchange.com/a/3650">code that works as intended</a>.</p>
+<dl>
+<dt>📜 📚 Not Empty</dt><dd><p>Since {messages} we can see the code is not working correctly.</p>
+<dl class="simple">
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">Q</span></code> <code class="docutils literal notranslate"><span class="pre">Quote</span></code></dt><dd><p>you’ve said {values}</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">T</span></code> <code class="docutils literal notranslate"><span class="pre">Talk</span></code> <code class="docutils literal notranslate"><span class="pre">Talking</span></code></dt><dd><p>you’re talking about {values}</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">A</span></code> <code class="docutils literal notranslate"><span class="pre">Ask</span></code> <code class="docutils literal notranslate"><span class="pre">Asking</span></code></dt><dd><p>you’re asking us {values}</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd>
+<dt>🔗 📜 <code class="docutils literal notranslate"><span class="pre">Context</span></code> <code class="docutils literal notranslate"><span class="pre">MRC</span></code> <code class="docutils literal notranslate"><span class="pre">Missing</span> <span class="pre">Review</span> <span class="pre">Context</span></code></dt><dd><p>The code you have posted is <a class="reference external" href="https://codereview.meta.stackexchange.com/a/3652">missing context</a> to be reasonably reviewed.</p>
+</dd>
+<dt>🔗 📜 <code class="docutils literal notranslate"><span class="pre">CNI</span></code> <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Not</span> <span class="pre">Implemented</span></code></dt><dd><p>You are asking about <a class="reference external" href="https://codereview.meta.stackexchange.com/a/3651">code that has not been implemented</a>.</p>
+</dd>
+<dt>🔗 📜 <code class="docutils literal notranslate"><span class="pre">BP</span></code> <code class="docutils literal notranslate"><span class="pre">Best</span> <span class="pre">Practice</span></code></dt><dd><p><a class="reference external" href="https://codereview.meta.stackexchange.com/a/3652">Generic best practice questions</a> cannot be reasonably answered.</p>
+</dd>
+<dt>🔗 📜 <code class="docutils literal notranslate"><span class="pre">AoM</span></code> <code class="docutils literal notranslate"><span class="pre">Author</span> <span class="pre">or</span> <span class="pre">Maintainer</span></code></dt><dd><p>We only review code from an <a class="reference external" href="https://codereview.meta.stackexchange.com/questions/1294">author or maintainer of the code</a>.</p>
+</dd>
+<dt>🔗 📜 <code class="docutils literal notranslate"><span class="pre">MD</span></code> <code class="docutils literal notranslate"><span class="pre">Missing</span> <span class="pre">Description</span></code></dt><dd><p>Questions must <a class="reference external" href="https://codereview.meta.stackexchange.com/q/1226">include a description of what the code does</a>.</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">DR</span></code> <code class="docutils literal notranslate"><span class="pre">Design</span> <span class="pre">Review</span></code></dt><dd><p>Design questions, like any other question, must include code.</p>
+</dd>
+<dt>🔗 📜 <code class="docutils literal notranslate"><span class="pre">EoC</span></code> <code class="docutils literal notranslate"><span class="pre">Explanation</span> <span class="pre">of</span> <span class="pre">Code</span></code></dt><dd><p>We do not <a class="reference external" href="https://codereview.meta.stackexchange.com/a/3654">explain how code works</a>.</p>
+</dd>
+<dt>🔗 📜 <code class="docutils literal notranslate"><span class="pre">I</span></code> <code class="docutils literal notranslate"><span class="pre">Inline</span></code></dt><dd><p>The code to be reviewed must be <a class="reference external" href="https://codereview.meta.stackexchange.com/q/1308">inline in the question</a>.</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">Golf</span></code></dt><dd><p>Golfing is the dark side of the force.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="site-policy">
+<h3>Site Policy<a class="headerlink" href="#site-policy" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>🔗 📜 <code class="docutils literal notranslate"><span class="pre">T</span></code> <code class="docutils literal notranslate"><span class="pre">Title</span></code></dt><dd><p><a class="reference external" href="https://codereview.stackexchange.com/help/how-to-ask">Titles</a> should only consist of a description of your code.</p>
+</dd>
+<dt>🔗 📜 <code class="docutils literal notranslate"><span class="pre">IO</span></code> <code class="docutils literal notranslate"><span class="pre">Insightful</span> <span class="pre">Observation</span></code></dt><dd><p>Answers must make at least one <a class="reference external" href="https://codereview.stackexchange.com/help/how-to-answer">insightful observation</a>, and must explain why the change is better than the OP’s code.</p>
+</dd>
+<dt>🔗 📜 <code class="docutils literal notranslate"><span class="pre">AI</span></code> <code class="docutils literal notranslate"><span class="pre">Answer</span> <span class="pre">Invalidation</span></code></dt><dd><p>Please do not update the code in your question to incorporate feedback from answers, doing so goes against the Question + Answer style of Code Review. This is not a forum where you should keep the most updated version in your question. Please see <a class="reference external" href="https://codereview.meta.stackexchange.com/a/1765">what you may and may not do after receiving answers</a>.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="stack-overflow">
+<h3>Stack Overflow<a class="headerlink" href="#stack-overflow" title="Permalink to this headline">¶</a></h3>
+<dl>
+<dt>🚩 <code class="docutils literal notranslate"><span class="pre">FP</span></code> <code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">Positive</span></code></dt><dd><p>False positives don’t generate messages</p>
+</dd>
+<dt>🔗 📜 <code class="docutils literal notranslate"><span class="pre">C</span></code> <code class="docutils literal notranslate"><span class="pre">Close</span></code> <code class="docutils literal notranslate"><span class="pre">Closed</span></code></dt><dd><p><a class="reference external" href="https://meta.stackoverflow.com/q/287400">Don’t use the existence of Code Review as a reason to close a question</a>. Evaluate the question and use a reason like; needs focus, primarily opinion-based, etc.</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">R</span></code> <code class="docutils literal notranslate"><span class="pre">Recommendation</span></code></dt><dd><dl>
+<dt>Empty</dt><dd><p>This question would be off-topic on Code Review.</p>
+</dd>
+<dt>📚 Else</dt><dd><p>Enter <a class="reference external" href="#stack-overflow-close-reasons">Stack Overflow close votes namespace</a>.</p>
+<p>This question would be off-topic on Code Review as it {messages}.</p>
+</dd>
+</dl>
+</dd>
+<dt>🔗 📜 📚 <code class="docutils literal notranslate"><span class="pre">W</span></code> <code class="docutils literal notranslate"><span class="pre">Wording</span></code></dt><dd><p>In the future please {messages} when recommending Code Review. Take, “This may be on-topic on Code Review. Please check <a class="reference external" href="https://codereview.stackexchange.com/help/on-topic">if it is on-topic</a> and <a class="reference external" href="https://codereview.stackexchange.com/help/how-to-ask">how to post a good question</a> before posting there.”</p>
+<dl class="simple">
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">D</span></code> <code class="docutils literal notranslate"><span class="pre">Doubtful</span></code></dt><dd><p>use doubtful wording</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">L</span></code> <code class="docutils literal notranslate"><span class="pre">Link</span></code></dt><dd><p>link to the help center</p>
+</dd>
+</dl>
+</dd>
+<dt>🔗 📜 <code class="docutils literal notranslate"><span class="pre">I</span></code> <code class="docutils literal notranslate"><span class="pre">Insight</span></code></dt><dd><p>Please familiarize yourself with what is <a class="reference external" href="https://codereview.stackexchange.com/help/on-topic">on-topic</a> and our <a class="reference external" href="https://codereview.meta.stackexchange.com/a/5778">guide to Code Review for Stack Overflow users</a>.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="stack-overflow-close-reasons">
+<h3>Stack Overflow Close Reasons<a class="headerlink" href="#stack-overflow-close-reasons" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">Broken</span></code> <code class="docutils literal notranslate"><span class="pre">CNWAI</span></code> <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Not</span> <span class="pre">Working</span> <span class="pre">As</span> <span class="pre">Intended</span></code></dt><dd><p>does not work as intended</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">Context</span></code> <code class="docutils literal notranslate"><span class="pre">MRC</span></code> <code class="docutils literal notranslate"><span class="pre">Missing</span> <span class="pre">Review</span> <span class="pre">Context</span></code></dt><dd><p>is missing context</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">CNI</span></code> <code class="docutils literal notranslate"><span class="pre">Code</span> <span class="pre">Not</span> <span class="pre">Implemented</span></code></dt><dd><p>is asking us to implement code</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">BP</span></code> <code class="docutils literal notranslate"><span class="pre">Best</span> <span class="pre">Practice</span></code></dt><dd><p>is asking about generic best practices</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">AoM</span></code> <code class="docutils literal notranslate"><span class="pre">Author</span> <span class="pre">or</span> <span class="pre">Maintainer</span></code></dt><dd><p>is not the OP’s code</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">MD</span></code> <code class="docutils literal notranslate"><span class="pre">Missing</span> <span class="pre">Description</span></code></dt><dd><p>is lacking an explanation of the code</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">DR</span></code> <code class="docutils literal notranslate"><span class="pre">Design</span> <span class="pre">Review</span></code></dt><dd><p>is asking for a review of design not code</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">EoC</span></code> <code class="docutils literal notranslate"><span class="pre">Explanation</span> <span class="pre">of</span> <span class="pre">Code</span></code></dt><dd><p>is asking us to explain the code</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">I</span></code> <code class="docutils literal notranslate"><span class="pre">Inline</span></code></dt><dd><p>does not have the code in the question</p>
+</dd>
+<dt>📜 <code class="docutils literal notranslate"><span class="pre">Golf</span></code></dt><dd><p>is asking about golfing</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="problems.html" class="btn btn-neutral float-right" title="Problems" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Skeleton Py’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Peilonrayz
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
